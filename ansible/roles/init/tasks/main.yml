@@ -10,8 +10,9 @@
     - curl
     - wget
     - vim
-    - imagemagick
+    #- imagemagick
     - python-software-properties
+    - python-pip
 
 - name: Add ppa Repository
   sudo: yes

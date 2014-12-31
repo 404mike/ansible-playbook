@@ -14,8 +14,10 @@
 - name: APT | Install mongodb
   apt: pkg=mongodb-org state=present
 
+- command: pip install {{ item }}
+  with_items:
+    - pymongo
+
 - name: Service | Start mongodb
   service: name=mongod state=started
-
-# requires pymongo to be installed on client - sudo pip install pymongo
-- mongodb_user: database=burgers name=jim password=12345 roles='readWrite,dbAdmin,userAdmin' state=present
+- mongodb_user: database={{ mongodb.database }} name={{ mongodb.user }} password={{ mongodb.password }} roles='readWrite,dbAdmin,userAdmin' state=present

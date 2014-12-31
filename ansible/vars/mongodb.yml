@@ -1,0 +1,4 @@
+mongodb:
+    user: appDatabaseUser
+    password: appDatabasePassword
+    database: appDatabase
