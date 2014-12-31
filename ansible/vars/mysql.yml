@@ -1,0 +1,5 @@
+mysql:
+    root_password: 123
+    user: appDatabaseUser
+    password: appDatabasePassword
+    database: appDatabase

@@ -1,0 +1,21 @@
+---
+- name: APT key | Add MongoDB key
+  apt_key: keyserver=hkp://keyserver.ubuntu.com:80 id=7F0CEB10 state=present
+  register: mongodb_key
+
+- name: APT repository | Add MongoDB repository
+  apt_repository: repo='deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' state=present
+  register: mongodb_repository
+
+- name: APT | Update cache
+  apt: update_cache=yes
+  when: mongodb_key|changed or mongodb_repository|changed
+
+- name: APT | Install mongodb
+  apt: pkg=mongodb-org state=present
+
+- name: Service | Start mongodb
+  service: name=mongod state=started
+
+# requires pymongo to be installed on client - sudo pip install pymongo
+- mongodb_user: database=burgers name=jim password=12345 roles='readWrite,dbAdmin,userAdmin' state=present
