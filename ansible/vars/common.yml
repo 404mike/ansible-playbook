@@ -3,6 +3,6 @@
     doc_root: /vagrant/public
     sys_packages: []
     dist: precise
-    php_packages: []
+    php_packages: ["php5-fpm","php5-common","php5-curl","php5-mysql","php5-mcrypt","php5-xdebug"]
     pecl_packages: ["oauth","mongo"]
     hostname: precise64
