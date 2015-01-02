@@ -18,6 +18,10 @@
   with_items:
     - pymongo
 
+- name: Move mongodb conf file
+  template: src=mongod.conf dest=/etc/mongod.conf
+
 - name: Service | Start mongodb
   service: name=mongod state=started
 - mongodb_user: database={{ mongodb.database }} name={{ mongodb.user }} password={{ mongodb.password }} roles='readWrite,dbAdmin,userAdmin' state=present
+- mongodb_user: database=foo name=mike password=mikepassword roles='readWrite,dbAdmin,userAdmin' state=present
