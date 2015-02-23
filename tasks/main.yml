@@ -1,0 +1,4 @@
+---
+
+- name: App | install yo angular
+  command: yo angular laravel chdir=/vagrant/public
