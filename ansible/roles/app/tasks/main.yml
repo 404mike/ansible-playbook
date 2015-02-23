@@ -1,2 +1,7 @@
 ---
-# application tasks to be customized and to run after the main provision
+
+- name: App | Setting Folder Permissions
+  command: chmod -R 755 /vagrant/app/storage
+
+- name: App | Composer install
+  command: composer install chdir=/vagrant
