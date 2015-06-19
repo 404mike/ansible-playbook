@@ -14,7 +14,7 @@ To change which packages are installed or set usernames and passwords for databa
 
 git submodule
 -------------
-If you would like to use this as a [submodule](http://git-scm.com/docs/git-submodule), add this repository as a submodule
+If you would like to use this as a [submodule](http://git-scm.com/docs/git-submodule), add it like so
 
     git submodule add https://github.com/404mike/ansible-playbook.git
 
