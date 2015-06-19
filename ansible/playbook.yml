@@ -17,12 +17,13 @@
   roles:
     - init
     - nginx
-    - java
-    - solr
-    # - php5-cli
-    # - php5-fpm
-    # - phpcommon
-    # - php-pecl
+    # - java
+    # - solr
+    # - elasticsearch
+    - php5-cli
+    - php5-fpm
+    - phpcommon
+    - php-pecl
     # - nodejs
     # - mongodb
     # - composer
