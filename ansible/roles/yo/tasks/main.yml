@@ -1,4 +1,4 @@
 ---
 
 - name: App | install yo angular
-  command: yo angular laravel chdir=/vagrant/public
+  command: yo angular laravel chdir={{ yo.install_dir }}

@@ -1,0 +1,3 @@
+app:
+    laravel_storage: /vagrant/app/storage
+    laravel_install_dir: /vagrant

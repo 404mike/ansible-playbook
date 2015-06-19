@@ -6,6 +6,8 @@
     servername: myApp.dev
     timezone: UTC
   vars_files:
+    - vars/app.yml
+    - vars/yo.yml
     - vars/mysql.yml
     - vars/pgsql.yml
     - vars/common.yml
@@ -15,14 +17,15 @@
   roles:
     - init
     - nginx
-    - php5-cli
-    - php5-fpm
-    - phpcommon
-    - php-pecl
-    #- nodejs
+    - solr
+    # - php5-cli
+    # - php5-fpm
+    # - phpcommon
+    # - php-pecl
+    # - nodejs
     # - mongodb
-    - composer
-    #- mysql
-    #- pgsql
-    - app
-    #- yo
+    # - composer
+    # - mysql
+    # - pgsql
+    # - app
+    # - yo

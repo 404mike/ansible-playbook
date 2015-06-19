@@ -1,7 +1,7 @@
 ---
 
 - name: App | Setting Folder Permissions
-  command: chmod -R 755 /vagrant/app/storage
+  command: chmod -R 755 {{ app.laravel_storage }}
 
 - name: App | Composer install
-  command: composer install chdir=/vagrant
+  command: composer install chdir={{ app.laravel_install_dir }}
