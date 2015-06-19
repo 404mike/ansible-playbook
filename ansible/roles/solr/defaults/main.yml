@@ -1,0 +1,15 @@
+---
+solr_workspace: /root
+
+solr_create_user: true
+solr_user: solr
+
+solr_version: "4.10.4"
+
+solr_install_path: /opt/solr
+solr_home: /var/solr
+solr_log_file_path: /var/log/solr.log
+
+solr_port: "8983"
+solr_xms: "256M"
+solr_xmx: "512M"
