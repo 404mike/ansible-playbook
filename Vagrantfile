@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
     config.vm.network :private_network, ip: "192.168.50.50"
     config.vm.synced_folder "app/storage", "/vagrant/app/storage", :owner => 'www-data', :group => 'www-data'
 
-    # Vagrant memort
+    # Vagrant memory
     config.vm.provider "virtualbox" do |v|
       v.memory = 1024
       v.cpus = 2
