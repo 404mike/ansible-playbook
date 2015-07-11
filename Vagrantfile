@@ -14,6 +14,8 @@ Vagrant.configure("2") do |config|
     config.vm.network :forwarded_port, guest: 27017, host: 27017
     # solr - 8983
     config.vm.network :forwarded_port, guest: 8983, host: 8983
+    # jetty - 8888
+    config.vm.network :forwarded_port, guest: 8888, host: 8888    
     # VM ip address
     config.vm.network :private_network, ip: "192.168.50.50"
     # storage
