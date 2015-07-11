@@ -1,0 +1,13 @@
+---
+- name: Download maven
+  sudo: yes
+  get_url: url=http://mirrors.ukfast.co.uk/sites/ftp.apache.org/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz dest=/tmp mode=0777
+
+- name: extract maven to /usr/local
+  unarchive: copy=no src="/tmp/apache-maven-3.3.3-bin.tar.gz" dest="/usr/local/"
+
+- name: Rename 'apache-maven-3.3.3' to 'maven'
+  command: mv /usr/local/apache-maven-3.3.3 /usr/local/maven
+
+- name: move Maven environment variables
+  template: src=maven.sh dest=/etc/profile.d
