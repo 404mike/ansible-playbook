@@ -1,13 +1,21 @@
 ---
+- name: Check to see if maven exists
+  stat: path=/usr/local/apache-maven-3.3.3
+  register: maven_exists
+
 - name: Download maven
   sudo: yes
   get_url: url=http://mirrors.ukfast.co.uk/sites/ftp.apache.org/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz dest=/tmp mode=0777
+  when: maven_exists.stat.exists == false
 
 - name: extract maven to /usr/local
   unarchive: copy=no src="/tmp/apache-maven-3.3.3-bin.tar.gz" dest="/usr/local/"
+  when: maven_exists.stat.exists == false  
 
 - name: Rename 'apache-maven-3.3.3' to 'maven'
   command: mv /usr/local/apache-maven-3.3.3 /usr/local/maven
+  when: maven_exists.stat.exists == false
 
 - name: move Maven environment variables
   template: src=maven.sh dest=/etc/profile.d
+  when: maven_exists.stat.exists == false
