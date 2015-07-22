@@ -31,3 +31,6 @@
     - generator-karma
     - generator-angular
     - generator-webapp
+    - time-grunt
+- command: npm install --save-dev grunt-wiredep
+
