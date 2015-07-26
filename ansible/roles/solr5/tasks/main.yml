@@ -14,4 +14,4 @@
 
 # crate a collection
 - name: create a new collection
-  command: sudo su - solr -c "/opt/solr/bin/solr create -c helloworld -n data_driven_schema_configs" chdir/tmp
+  command: sudo su - solr -c "/opt/solr/bin/solr create -c {{ solr5.collection_name }} -n data_driven_schema_configs" chdir/tmp
