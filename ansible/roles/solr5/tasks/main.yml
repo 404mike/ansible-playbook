@@ -1,0 +1,17 @@
+---
+- name: Download solr-5
+  get_url: url=http://apache.mirror1.spango.com/lucene/solr/5.2.1/solr-5.2.1.tgz dest=/tmp
+
+- name: untar solr
+  command: tar xzf solr-5.2.1.tgz solr-5.2.1/bin/install_solr_service.sh --strip-components=2 chdir=/tmp
+# tar xzf solr-5.2.1.tgz solr-5.2.1/bin/install_solr_service.sh --strip-components=2
+
+- name: run install script
+  command: sudo bash ./install_solr_service.sh solr-5.2.1.tgz chdir=/tmp
+# sudo bash ./install_solr_service.sh solr-5.2.1.tgz
+
+# sudo service solr status
+
+# crate a collection
+- name: create a new collection
+  command: sudo su - solr -c "/opt/solr/bin/solr create -c helloworld -n data_driven_schema_configs" chdir/tmp
