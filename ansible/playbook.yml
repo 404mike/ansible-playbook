@@ -14,22 +14,24 @@
     - vars/nginxphp.yml
     - vars/ws_defaults.yml
     - vars/mongodb.yml
+    - vars/solr5.yml
   roles:
     - init
-    - nginx
-    - git
-    # - java
+    # - nginx
+    # - git
+    - java
+    - solr5
     # - maven
     # - solr
     # - elasticsearch
-    - php5-cli
-    - php5-fpm
-    - phpcommon
-    - php-pecl
+    # - php5-cli
+    # - php5-fpm
+    # - phpcommon
+    # - php-pecl
     # - nodejs
     # - mongodb
-    - composer
+    # - composer
     # - mysql
     # - pgsql
-    - app
+    # - app
     # - yo

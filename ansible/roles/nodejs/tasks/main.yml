@@ -3,8 +3,8 @@
   apt: pkg={{ item }} state=latest update_cache=yes
   with_items:
     - python-pycurl
-- name: Add the nodejs repo
-  apt_repository: repo="ppa:chris-lea/node.js"
+# - name: Add the nodejs repo
+#   apt_repository: repo="ppa:chris-lea/node.js"
 - name: Install nodejs
   apt: pkg={{ item }} state=latest update_cache=yes
   with_items:
@@ -18,7 +18,8 @@
   - libssl-dev
   - pkg-config
   - build-essential
-  - nodejs
+  - npm
+  - nodejs-legacy
 - command: npm install -g {{ item }}
   with_items:
     - grunt
@@ -26,4 +27,10 @@
     - bower
     - gulp
     - less
+    - yo
+    - generator-karma
     - generator-angular
+    - generator-webapp
+    - time-grunt
+- command: npm install --save-dev grunt-wiredep
+
